@@ -399,6 +399,20 @@ decode QUADRANT default Unknown::unknown() {
             }
         }
 
+        0x02: decode FUNCT3 {
+            format ROp {
+                0x0: matrix_multiply({{
+                    hack("Matrix Multiply\n");
+                }});
+                0x1: matrix_ld({{
+                    hack("Matrix Load\n");
+                }});
+                0x2: matrix_st({{
+                    hack("Matrix Store\n");
+                }});
+            }
+        }
+
         0x03: decode FUNCT3 {
             format IOp {
                 0x0: fence({{
