@@ -404,11 +404,15 @@ decode QUADRANT default Unknown::unknown() {
                 0x0: matrix_multiply({{
                     hack("Matrix Multiply\n");
                 }});
+            }
+            format Load {
                 0x1: matrix_ld({{
-                    hack("Matrix Load\n");
+                    hack("Matrix Load %lu\n", Mem);
                 }});
+            }
+            format Store {
                 0x2: matrix_st({{
-                    hack("Matrix Store\n");
+                    hack("Matrix Store %lu\n", Mem);
                 }});
             }
         }
