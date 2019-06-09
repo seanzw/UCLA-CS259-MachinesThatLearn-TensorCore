@@ -402,17 +402,24 @@ decode QUADRANT default Unknown::unknown() {
         0x02: decode FUNCT3 {
             format ROp {
                 0x0: matrix_multiply({{
-                    hack("Matrix Multiply\n");
+                    Rd = Rd + Rs1 + Rs2;
+                    xc->tcBase()->getCpuPtr()->matrixUnit.multiply();
                 }});
             }
             format Load {
                 0x1: matrix_ld({{
-                    hack("Matrix Load %lu\n", Mem);
+                    Rd = Mem;
+                    uint64_t reg = xc->readIntRegOperand(this, 0);
+                    Addr EA = reg + offset;
+                    xc->tcBase()->getCpuPtr()->matrixUnit.load(xc, EA);
                 }});
             }
             format Store {
                 0x2: matrix_st({{
-                    hack("Matrix Store %lu\n", Mem);
+                    Mem_ud = Rs2_ud;
+                    uint64_t reg = xc->readIntRegOperand(this, 0);
+                    Addr EA = reg + offset;
+                    Mem = xc->tcBase()->getCpuPtr()->matrixUnit.store(xc, EA);
                 }});
             }
         }

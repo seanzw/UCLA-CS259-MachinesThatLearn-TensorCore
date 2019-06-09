@@ -60,6 +60,8 @@ DebugFlag('PCEvent')
 DebugFlag('Quiesce')
 DebugFlag('Mwait')
 
+DebugFlag('MatrixUnit')
+
 CompoundFlag('ExecAll', [ 'ExecEnable', 'ExecCPSeq', 'ExecEffAddr',
     'ExecFaulting', 'ExecFetchSeq', 'ExecOpClass', 'ExecRegDelta',
     'ExecResult', 'ExecSymbol', 'ExecThread',
@@ -108,6 +110,8 @@ Source('simple_thread.cc')
 Source('thread_context.cc')
 Source('thread_state.cc')
 Source('timing_expr.cc')
+
+Source('matrix_unit.cc')
 
 SimObject('DummyChecker.py')
 SimObject('StaticInstFlags.py')

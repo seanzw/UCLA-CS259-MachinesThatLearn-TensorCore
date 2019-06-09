@@ -67,6 +67,13 @@
 #include "sim/system.hh"
 #include "debug/Mwait.hh"
 
+/****************************************************************
+ * ! TensorCore Extension.
+ * ! Include the matrix unit.
+ */
+#include "cpu/matrix_unit.hh"
+
+
 class BaseCPU;
 struct BaseCPUParams;
 class CheckerCPU;
@@ -151,6 +158,13 @@ class BaseCPU : public ClockedObject
     const unsigned int _cacheLineSize;
 
   public:
+
+    /****************************************************************
+     * ! TensorCore Extension.
+     * ! Include the matrix unit.
+     */
+    MatrixUnit matrixUnit;
+
 
     /**
      * Purely virtual method that returns a reference to the data
