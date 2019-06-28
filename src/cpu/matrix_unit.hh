@@ -6,9 +6,9 @@
  * ! Implement the matrix unit.
  */
 
-#include "base/types.hh"
-
 #include <list>
+
+#include "base/types.hh"
 
 class ExecContext;
 
@@ -16,7 +16,7 @@ class MatrixUnit {
 public:
   static constexpr int MATRIX_SIZE = 4;
   static constexpr int MATRIX_LEN = MATRIX_SIZE * MATRIX_SIZE;
-  using MATRIX_ELEMENT_T = int32_t;
+  using MATRIX_ELEMENT_T = float;
   using MATRIX_T = struct { MATRIX_ELEMENT_T elements[MATRIX_LEN]; };
 
   void load(ExecContext *xc, Addr addr);

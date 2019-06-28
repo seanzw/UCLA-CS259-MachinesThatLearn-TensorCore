@@ -1,8 +1,7 @@
-#include "matrix_unit.hh"
+#include <sstream>
 
 #include "exec_context.hh"
-
-#include <sstream>
+#include "matrix_unit.hh"
 
 void MatrixUnit::load(ExecContext *xc, Addr addr) {
   inform("Load matrix at 0x%x.\n", addr);

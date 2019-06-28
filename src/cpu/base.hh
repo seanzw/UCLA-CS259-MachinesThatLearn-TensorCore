@@ -51,13 +51,16 @@
 // Before we do anything else, check if this build is the NULL ISA,
 // and if so stop here
 #include "config/the_isa.hh"
+
 #if THE_ISA == NULL_ISA
 #include "arch/null/cpu_dummy.hh"
+
 #else
 #include "arch/interrupts.hh"
 #include "arch/isa_traits.hh"
 #include "arch/microcode_rom.hh"
 #include "base/statistics.hh"
+#include "debug/Mwait.hh"
 #include "sim/clocked_object.hh"
 #include "sim/eventq.hh"
 #include "sim/full_system.hh"
@@ -65,14 +68,12 @@
 #include "sim/probe/pmu.hh"
 #include "sim/probe/probe.hh"
 #include "sim/system.hh"
-#include "debug/Mwait.hh"
 
 /****************************************************************
  * ! TensorCore Extension.
  * ! Include the matrix unit.
  */
 #include "cpu/matrix_unit.hh"
-
 
 class BaseCPU;
 struct BaseCPUParams;

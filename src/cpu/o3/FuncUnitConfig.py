@@ -44,6 +44,10 @@ from m5.params import *
 
 from m5.objects.FuncUnit import *
 
+class Matrix(FUDesc):
+    opList = [ OpDesc(opClass='Matrix', opLat=19, pipelined=True) ]
+    count = 1
+
 class IntALU(FUDesc):
     opList = [ OpDesc(opClass='IntAlu') ]
     count = 6

@@ -404,7 +404,7 @@ decode QUADRANT default Unknown::unknown() {
                 0x0: matrix_multiply({{
                     Rd = Rd + Rs1 + Rs2;
                     xc->tcBase()->getCpuPtr()->matrixUnit.multiply();
-                }});
+                }}, MatrixOp);
             }
             format Load {
                 0x1: matrix_ld({{

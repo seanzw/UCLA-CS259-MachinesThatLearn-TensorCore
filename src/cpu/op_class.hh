@@ -105,5 +105,6 @@ static const OpClass FloatMemWriteOp = Enums::FloatMemWrite;
 static const OpClass IprAccessOp = Enums::IprAccess;
 static const OpClass InstPrefetchOp = Enums::InstPrefetch;
 static const OpClass Num_OpClasses = Enums::Num_OpClass;
+static const OpClass MatrixOp = Enums::Matrix;
 
 #endif // __CPU__OP_CLASS_HH__
